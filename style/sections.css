@@ -138,6 +138,7 @@
     letter-spacing: 0.5px;
     border-right: 1px solid rgba(255, 142, 179, 0.2);
     border-bottom: 1px solid rgba(255, 142, 179, 0.2);
+    will-change: opacity, transform;
 }
 
 .skill:hover {
