@@ -22,3 +22,16 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, label {
   position: relative;  
   z-index: 1;
 }
+button, a, .mobile-toggle, .mobile-toggle span, input, textarea {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+button:active, a:active, .mobile-toggle:active, .mobile-toggle span:active,
+input:focus, textarea:focus, button:focus, a:focus, .mobile-toggle:focus, .mobile-toggle span:focus {
+  background-color: transparent !important;
+  outline: none !important;
+}
+
