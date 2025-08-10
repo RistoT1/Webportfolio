@@ -4,7 +4,7 @@ export class Animations {
     }
 
     init() {
-        // Smooth scroll for anchor links
+        // Smooth scroll for links
         for (const anchor of document.querySelectorAll('a[href^="#"]')) {
             anchor.addEventListener('click', e => {
                 e.preventDefault();
@@ -25,7 +25,7 @@ export class Animations {
             rootMargin: '0px 0px -50px 0px',
         };
 
-        // Intersection Observer for fade-in animations
+        // fade-in animations
         const observer = new IntersectionObserver((entries) => {
             for (const entry of entries) {
                 if (!entry.isIntersecting) continue;
@@ -46,7 +46,7 @@ export class Animations {
             }
         }, observerOptions);
 
-        // Initial hidden state + observe
+        // Initial hidden state
         const elementsToAnimate = document.querySelectorAll(
             '.about-text h2, .about-text p, .about-stats, .projects h2, .project-item, .contact h2, .contact-info, .contact-form, .skill'
         );
@@ -58,7 +58,7 @@ export class Animations {
             observer.observe(el);
         }
 
-        // Typing effect with requestAnimationFrame
+        // Typing effect 
         const typeWriter = (element, text, speed = 100) => {
             let i = 0;
             element.textContent = '';
@@ -81,7 +81,7 @@ export class Animations {
             }, 1000);
         });
 
-        // Hover effects for project items
+        // Hover effects 
         for (const item of document.querySelectorAll('.project-item')) {
             item.addEventListener('mouseenter', () => {
                 item.style.transform = 'translateX(10px)';
@@ -93,7 +93,7 @@ export class Animations {
             });
         }
 
-        // Counter animation with requestAnimationFrame
+        // Counter animation
         const animateCounter = (element, target) => {
             let current = 0;
             const increment = target / 100;

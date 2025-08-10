@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -180,20 +181,22 @@
                 <form class="contact-form">
                     <div class="form-group">
                         <label for="name">name</label>
-                        <input type="text" id="name" name="name" placeholder="your name" required>
+                        <input type="text" id="name" name="name" placeholder="your name" required autocomplete="name">
                     </div>
                     <div class="form-group">
                         <label for="email">email</label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required
+                            autocomplete="email">
                     </div>
                     <div class="form-group">
                         <label for="project">project type</label>
-                        <input type="text" id="project" name="project" placeholder="web app, mobile app, etc.">
+                        <input type="text" id="project" name="title" placeholder="web app, mobile app, etc."
+                            autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="message">message</label>
                         <textarea id="message" name="message" rows="4" placeholder="tell me about your project..."
-                            required></textarea>
+                            required autocomplete="off"></textarea>
                     </div>
                     <button type="submit" class="submit-button">send message</button>
                 </form>
@@ -205,7 +208,8 @@
         <div class="footer-content">
             <div class="footer-section footer-brand">
                 <h3>risto toivanen</h3>
-                <p>Second-year student at Sakky in Kuopio, studying software development. Developing practical skills in programming and software design.</p>
+                <p>Second-year student at Sakky in Kuopio, studying software development. Developing practical skills in
+                    programming and software design.</p>
                 <div class="social-links">
                     <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
@@ -236,7 +240,7 @@
             <p>© 2025 risto toivanen. all rights reserved.</p>
         </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="module" src="js/app.js"></script>
 </body>
 

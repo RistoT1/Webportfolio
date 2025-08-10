@@ -6,18 +6,14 @@ export class Theme {
   }
 
   init() {
-    // Load saved theme preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
       document.documentElement.setAttribute('data-theme', 'light');
       this.setIcon('sun');
     } else {
-      // Default dark or no attribute means dark
       document.documentElement.removeAttribute('data-theme');
       this.setIcon('moon');
     }
-
-    // Add click listener
     this.themeToggle.addEventListener('click', () => this.toggleTheme());
   }
 
