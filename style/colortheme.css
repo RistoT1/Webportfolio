@@ -1,0 +1,176 @@
+:root {
+    /* Background Colors */
+    --color-bg-start: #2e1f26;
+    --color-bg-end: #12121a;
+    --color-bg-dark: #0a0a0a;
+    --color-bg-card: #12121a;
+    --color-bg-overlay: rgba(10, 10, 10, 0.95);
+
+    /* Text Colors */
+    --color-text-main: #e4e4e7;
+    --color-text-secondary: #71717a;
+    --color-text-muted: #52525b;
+    --color-text-white: #ffffff;
+    --color-text-placeholder: #52525b;
+
+    /* Border Colors */
+    --color-border: #18181b;
+    --color-border-light: #27272a;
+    --color-border-accent: #eebbe7;
+    --color-border-accent-light: rgba(255, 142, 179, 0.2);
+
+    /* Accent Colors */
+    --color-accent-light: rgba(255, 142, 179, 0.1);
+    --color-accent: #eebbe7;
+    --color-accent-hover: rgba(255, 142, 179, 0.15);
+    --color-accent-ultra-light: rgba(255, 142, 180, 0.048);
+    --color-accent-glow: rgba(255, 142, 179, 0.3);
+    --color-accent-strong: rgba(255, 142, 179, 0.6);
+    --color-accent-gradient: rgba(255, 142, 179, 0.8);
+
+    /* Navigation Colors */
+    --color-nav-bg: rgba(93, 71, 123, 0.7);
+    --color-nav-border: #18181b;
+
+    /* Footer Colors */
+    --color-footer-bg: #0a0a0a;
+    --color-footer-border: #18181b;
+
+    /* Link Colors */
+    --color-link-hover: #e4e4e7;
+    --color-link-default: #a1a1aa;
+
+    /* Social Colors */
+    --color-social-border: #27272a;
+    --color-social-hover-border: #e4e4e7;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    /* Background Colors */
+    --color-bg-start: #faf7f8;
+    --color-bg-end: #ffffff;
+    --color-bg-dark: #f8f8f8;
+    --color-bg-card: #ffffff;
+    --color-bg-overlay: rgba(255, 255, 255, 0.95);
+
+    /* Text Colors */
+    --color-text-main: #1a1a1a;
+    --color-text-secondary: #6b7280;
+    --color-text-muted: #9ca3af;
+    --color-text-white: #000000;
+    --color-text-placeholder: #9ca3af;
+
+    /* Border Colors */
+    --color-border: #e5e7eb;
+    --color-border-light: #f3f4f6;
+    --color-border-accent: #d946ef;
+    --color-border-accent-light: rgba(217, 70, 239, 0.2);
+
+    /* Accent Colors */
+    --color-accent-light: rgba(217, 70, 239, 0.1);
+    --color-accent: #d946ef;
+    --color-accent-hover: rgba(217, 70, 239, 0.15);
+    --color-accent-ultra-light: rgba(217, 70, 239, 0.05);
+    --color-accent-glow: rgba(217, 70, 239, 0.3);
+    --color-accent-strong: rgba(217, 70, 239, 0.7);
+    --color-accent-gradient: rgba(217, 70, 239, 0.8);
+
+    /* Navigation Colors */
+    --color-nav-bg: rgba(255, 255, 255, 0.8);
+    --color-nav-border: #e5e7eb;
+
+    /* Footer Colors */
+    --color-footer-bg: #f8f8f8;
+    --color-footer-border: #e5e7eb;
+
+    /* Link Colors */
+    --color-link-hover: #1a1a1a;
+    --color-link-default: #6b7280;
+
+    /* Social Colors */
+    --color-social-border: #d1d5db;
+    --color-social-hover-border: #1a1a1a;
+}
+
+/* Theme toggle icons */
+.theme-toggle .sun-icon {
+    display: none;
+}
+
+.theme-toggle .moon-icon {
+    display: block;
+}
+
+[data-theme="light"] .theme-toggle .sun-icon {
+    display: block;
+}
+
+[data-theme="light"] .theme-toggle .moon-icon {
+    display: none;
+}
+
+/* Smooth theme transition */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light mode specific adjustments */
+[data-theme="light"] .hero {
+    background-blend-mode: overlay;
+}
+
+[data-theme="light"] .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 0;
+}
+
+[data-theme="light"] .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Light mode form styling */
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group textarea {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+}
+
+[data-theme="light"] .form-group input:focus,
+[data-theme="light"] .form-group textarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-accent-light);
+}
+
+[data-theme="light"] .submit-button {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+}
+
+[data-theme="light"] .submit-button:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: var(--color-accent-light);
+}
+
+/* Light mode profile circle adjustments */
+[data-theme="light"] .profile-circle:hover {
+    box-shadow: 0 0 30px var(--color-accent-glow);
+}
+
+[data-theme="light"] .profile-circle-gradient:hover {
+    background: linear-gradient(45deg, var(--color-accent-gradient), var(--color-accent), var(--color-accent-gradient));
+    box-shadow: 0 0 30px var(--color-accent-glow);
+}
+
+/* Light mode navigation backdrop */
+[data-theme="light"] .navbar {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}

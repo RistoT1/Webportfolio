@@ -4,13 +4,13 @@
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(93, 71, 123, 0.7);
+    background: var(--color-nav-bg);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid #18181b;
     z-index: 1000;
     padding: 1rem 0;
     transition: all 0.3s ease;
     height: 70px;
+    box-shadow: 0 1px 3px rgb(255, 255, 255, 0.1);
 }
 
 .nav-container {
@@ -26,7 +26,7 @@
 .logo {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #e4e4e7;
+    color: var(--color-text-main);
     text-decoration: none;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .nav-link {
-    color: #a1a1aa;
+    color: var(--color-link-default);
     text-decoration: none;
     font-weight: 400;
     font-size: 0.875rem;
@@ -49,7 +49,7 @@
 }
 
 .nav-link:hover {
-    color: #e4e4e7;
+    color: var(--color-text-main);
 }
 
 .nav-link::after {
@@ -59,7 +59,7 @@
     height: 1px;
     bottom: -4px;
     left: 0;
-    background: #e4e4e7;
+    background: var(--color-text-main);
     transition: width 0.3s ease;
 }
 
@@ -72,7 +72,7 @@
     border: none;
     padding: 0.5rem;
     cursor: pointer;
-    color: #a1a1aa;
+    color: var(--color-link-default);
     font-size: 1rem;
     transition: all 0.2s ease;
     width: 36px;
@@ -83,8 +83,8 @@
 }
 
 .theme-toggle:hover {
-    border-color: #e4e4e7;
-    color: #e4e4e7;
+    border-color: var(--color-text-main);
+    color: var(--color-text-main);
 }
 
 .mobile-toggle {
@@ -97,51 +97,7 @@
 .mobile-toggle span {
     width: 20px;
     height: 1px;
-    background: #e4e4e7;
+    background: var(--color-text-main);
     margin: 4px 0;
     transition: 0.3s;
-}
-
-/* Mobile Navigation */
-@media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        height: 0;
-        background: rgba(10, 10, 10, 0.95);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        justify-content: start;
-        padding: 0;
-        transition: all 0.3s ease;
-        border-bottom: 1px solid #18181b;
-        z-index: 999;
-        overflow: hidden;
-        opacity: 0;
-    }
-
-    .nav-menu.active {
-        height: auto;
-        min-height: 200px;
-        padding: 2rem 0;
-        opacity: 1;
-    }
-
-    .mobile-toggle {
-        display: flex;
-    }
-
-    .mobile-toggle.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-4px, 4px);
-    }
-
-    .mobile-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .mobile-toggle.active span:nth-child(3) {
-        transform: rotate(45deg) translate(-4px, -4px);
-    }
 }

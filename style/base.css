@@ -2,16 +2,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
     font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-    background: linear-gradient(180deg, #2e1f26, #12121a);
-    color: #e4e4e7;
+    background: linear-gradient(180deg, var(--color-bg-start), var(--color-bg-end));
+    color: var(--color-text-main);
     min-height: 100vh;
     line-height: 1.6;
     overflow-x: hidden;
