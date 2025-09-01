@@ -1,11 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>More About Me - Risto Toivanen</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style/main.css">
 </head>
+
 <body>
-    
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">risto.rt</a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Work</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="#" class="nav-link active">Read more</a></li>
+                <li><button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+            </ul>
+
+            <div class="mobile-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="readmore-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">home</a>
+                <span>/</span>
+                <span>more about me</span>
+            </div>
+            <h1>getting to know risto</h1>
+            <p class="hero-description">A deeper dive into my journey, passions, and what drives me as a developer</p>
+        </div>
+    </section>
+
+    <section class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>my journey</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-content">
+                        <h3>the beginning</h3>
+                        <p>I started my coding journey with simple Python and C# YouTube tutorials. My main attention
+                            was on creating games. Back then, my projects were small and my code was often very
+                            inconsistent, but I loved figuring things out in my own way.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h3>Started finding interest in Web Development</h3>
+                        <p>I started getting the hang of coding, but my interest in game-making decreased, so I shifted
+                            to learning web development. Around this time, my code started getting a bit cleaner, and I
+                            learned a lot of HTML and basic CSS. I didn’t code as much during this period, but it laid a
+                            solid foundation for me.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h3>Started studies at Sakky</h3>
+                        <p>During this time, I already had a strong foundation in coding, so while we studied C# and
+                            HTML at school, I had already shifted my interests to JavaScript and PHP</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <h3>present day</h3>
+                        <p>In my second year at Sakky, I’ve learned a lot of SQL and how to integrate front-end with
+                            AJAX. Right now, I’m coding more than I ever have before. I try to code at least two hours
+                            every day on top of school work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy-section">
+        <div class="container">
+            <div class="philosophy-grid">
+                <div class="philosophy-text">
+                    <div class="section-header">
+                        <h2>my approach</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="philosophy-content">
+                        <div class="philosophy-item">
+                            <h3>simplicity first</h3>
+                            <p>I believe the best solutions are often the simplest ones. Clean, readable code is more
+                                valuable than clever complexity. If it works and others can understand it, that's a win
+                                in my opinion.
+                            </p>
+                        </div>
+                        <div class="philosophy-item">
+                            <h3>practical learning</h3>
+                            <p>I learn best by building things. In every project I create, I try to learn something new.
+                                Theory is important, but for me practice makes it stick.
+                            </p>
+                        </div>
+                        <div class="philosophy-item">
+                            <h3>user-centered thinking</h3>
+                            <p>Technology should make life easier, not more complicated. I always try to think from the
+                                user’s perspective—what do they actually need, and how can I deliver that in the most
+                                straightforward way? For example, many websites have far too many steps or unnecessary
+                                sections, making simple tasks like changing an order unnecessarily complicated.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="philosophy-visual">
+                    <div class="code-snippet">
+                        <div class="code-header">
+                            <span class="code-title">my_philosophy.js</span>
+                            <div class="code-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="comment">// My development philosophy</span>
+<span class="keyword">const</span> <span class="variable">myApproach</span> = {
+  <span class="property">simplicity</span>: <span class="string">'over complexity'</span>,
+  <span class="property">learning</span>: <span class="string">'through building'</span>,
+  <span class="property">focus</span>: <span class="string">'user needs first'</span>,
+  <span class="property">code</span>: <span class="string">'clean and readable'</span>
+};
+
+<span class="comment">// Always remember</span>
+<span class="keyword">function</span> <span class="function">developWithPurpose</span>() {
+  <span class="keyword">return</span> <span class="string">'solve real problems'</span>;
+  
+}
+<span class="comment">// Even if you make mistakes</span>
+<span class="comment">// Never:</span>
+<span class="keyword">return <span class="error-line">giveup;</span>;</span>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="interests-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>beyond code</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>fitness & health</h3>
+                    <p>Regular gym sessions help me stay focused and energized. I also do indoor climbing.</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>social connections</h3>
+                    <p>Spending time with friends and family keeps me grounded. Meaningful conversations and shared
+                        experiences are some of life’s greatest joys for me.</p>
+
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>continuous learning</h3>
+                    <p>The tech world moves fast, and I enjoy keeping up. Whether it's a new framework, design pattern,
+                        or just a better way to organize code and files.</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>practical projects</h3>
+                    <p>I love building things that actually get used. Whether it's a simple booking system or a tool
+                        that saves someone time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="future-section">
+        <div class="container">
+            <div class="future-content">
+                <div class="section-header">
+                    <h2>looking ahead</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="future-text">
+                    <p>I'm still early in my development journey, but I'm excited about where it's heading. My focus
+                        remains on building solid fundamentals while staying curious about new technologies and
+                        approaches.</p>
+                    <p>In the short term, I want to deepen my understanding of full-stack development and work on more
+                        complex projects. Long term, I'd love to contribute to software that makes a meaningful
+                        difference in people's daily lives.</p>
+                    <p>The best part about being a developer is that there's always something new to learn, always a
+                        better way to solve a problem, and always an opportunity to build something.</p>
+                </div>
+                <div class="future-goals">
+                    <h3>current focus areas</h3>
+                    <ul class="goals-list">
+                        <li>Strengthening my JavaScript and PHP skills</li>
+                        <li>Learning modern libraries and frameworks like Koa and React</li>
+                        <li>Building more complex database-driven applications</li>
+                        <li>Improving my problem-solving skills with coding and leetcode</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="connect-section">
+        <div class="container">
+            <div class="connect-content">
+                <h2>let's connect</h2>
+                <p>Thanks for taking the time to learn more about me. If you'd like to chat about development,
+                    collaborate on a project, or just say hello, I'd love to hear from you✌🏻</p>
+                <div class="connect-actions">
+                    <a href="../index.html#contact" class="connect-button primary">get in touch</a>
+                    <a href="../index.html#projects" class="connect-button secondary">view my work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <h3>risto toivanen</h3>
+                <p>Second-year student at Sakky in Kuopio, studying software development. Developing practical skills in
+                    programming and software design.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/risto_toivanenn/" class="social-link"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/RistoT1" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/risto-toivanen/" class="social-link"><i
+                            class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html#home">home</a></li>
+                    <li><a href="../index.html#about">about</a></li>
+                    <li><a href="../index.html#projects">work</a></li>
+                    <li><a href="../index.html#contact">contact</a></li>
+                    <li><a href="readmore.html">Read more</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>connect</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:ristotoiv.rt@gmail.com">email</a></li>
+                    <li><a href="tel:+358 449787395">phone</a></li>
+                    <li><a href="https://drive.google.com/file/d/1XuYLmmuJxTBfRFIynlO6PkMmMc1jsiw5/view?usp=sharing"
+                            download>resume</a></li>
+                    <li><a href="https://www.linkedin.com/in/risto-toivanen/">linkedin</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 risto toivanen. all rights reserved.</p>
+        </div>
+    </footer>
+    <script type="module">
+        import { Theme } from '../js/theme.js';
+        import { MainUI } from '../js/main.js';
+        
+        new Theme();
+        new MainUI();
+    </script>
 </body>
 </html>

@@ -3,10 +3,9 @@ import { Theme } from './theme.js';
 import { MainUI } from './main.js';
 import { initContactForm } from './contact.js';
 
-new Animations();
-new Theme();
-new MainUI();
-
 document.addEventListener('DOMContentLoaded', () => {
+  new Animations();
+  new Theme();
+  new MainUI();
   initContactForm();
 });
