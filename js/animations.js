@@ -81,17 +81,17 @@ export class Animations {
             }, 1000);
         });
 
-        // Hover effects 
+        /*Hover effects 
         for (const item of document.querySelectorAll('.project-item')) {
             item.addEventListener('mouseenter', () => {
-                item.style.transform = 'translateX(10px)';
-                item.style.paddingLeft = '2rem';
+                item.style.transform = 'scale(1.05)';
+                item.style.paddingLeft = '2rem'; // Optional: remove if not needed
             });
             item.addEventListener('mouseleave', () => {
-                item.style.transform = 'translateX(0)';
+                item.style.transform = 'scale(1)';
                 item.style.paddingLeft = '0';
             });
-        }
+        }*/
 
         // Counter animation
         const animateCounter = (element, target) => {
