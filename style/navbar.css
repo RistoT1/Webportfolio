@@ -101,3 +101,150 @@
     margin: 4px 0;
     transition: 0.3s;
 }
+
+
+#album {
+    position: relative; /* make vinyl relative to album */
+    width: 40px;
+    height: 40px;
+}
+
+#cover {
+    position: relative;
+    z-index: 1;
+    width: 70%;
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.6),
+        inset 0 0 8px rgba(255, 255, 255, 0.15),
+        inset 0 0 4px rgba(0, 0, 0, 0.4);
+    background-image: var(--cover-img, url(''));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Pseudo-element for border effect */
+#cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* fills the cover */
+    padding: 12px;
+    /* border thickness */
+    border-radius: inherit;
+    background: var(--border-img, url(''));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    /* make it appear as a border around cover */
+    pointer-events: none;
+}
+
+.song-popup {
+    position: fixed;
+    top: 80px; /* just below navbar (which is 70px tall) */
+    right: 20px;
+    max-width: 200px;
+    background: var(--color-nav-bg);
+    color: var(--color-text-main);
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2000;
+    backdrop-filter: blur(10px);
+}
+
+.song-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+.song-popup h5 {
+    margin: 4px 0 6px 0; 
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    opacity: 0.9;
+}
+
+.song-popup img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+#popupInfo {
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
+
+#popupTitle {
+    display: block;
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+#popupArtist {
+    display: block;
+    color: var(--color-text-main);
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
+
+
+
+
+#vinyl {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    width: 80%;
+    height: 80%;
+    display: block;
+    background: radial-gradient(circle at center, #222 0%, #000 70%);
+    box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    animation: 5s linear spinThat infinite;
+}
+
+#print {
+    position: absolute;
+    top: 33%;
+    left: 33%;
+    height: 34%;
+    width: 34%;
+    box-shadow: inset 0 0 0 5px rgba(150, 150, 150, 0.5);
+    background-image: url('');
+    background-size: cover;
+    border-radius: 50%;
+}
+
+
+@keyframes spinThat {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
