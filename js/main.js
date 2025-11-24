@@ -45,7 +45,9 @@ export class MainUI {
             { name: "C#", desc: "App & game dev", img: "img/CsharpLogo.svg" },
             { name: "SQL", desc: "Database queries", img: "img/MySQLLogo.jpg" },
             { name: "PHP", desc: "Server scripting", img: "img/PhpLogo.png" },
-            { name: "Docker", desc: "Container Platform", img: "img/Docker.png"}
+            { name: "Docker", desc: "Container Platform", img: "img/Docker.png"},
+            { name: "Express.js", desc: "Web framework for Node.js", img: "img/ExpressJS.png" }
+
         ];
 
 
