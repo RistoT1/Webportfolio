@@ -44,7 +44,8 @@ export class MainUI {
             { name: "CSS", desc: "Web styling", img: "img/CssLogo.svg" },
             { name: "C#", desc: "App & game dev", img: "img/CsharpLogo.svg" },
             { name: "SQL", desc: "Database queries", img: "img/MySQLLogo.jpg" },
-            { name: "PHP", desc: "Server scripting", img: "img/PhpLogo.png" }
+            { name: "PHP", desc: "Server scripting", img: "img/PhpLogo.png" },
+            { name: "Docker", desc: "Container Platform", img: "img/Docker.png"}
         ];
 
 
