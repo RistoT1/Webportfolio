@@ -40,7 +40,9 @@
                 <span>more about me</span>
             </div>
             <h1>getting to know risto</h1>
-            <p class="hero-description">A deeper dive into my journey, passions, and what drives me as a developer</p>
+            <div class="hero-description-container">
+                <p class="hero-description">A deeper dive into my journey, passions, and what drives me as a developer</p>
+            </div>
         </div>
     </section>
 
@@ -50,44 +52,58 @@
                 <h2>my journey</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2022</div>
-                    <div class="timeline-content">
-                        <h3>the beginning</h3>
-                        <p>I started my coding journey with simple Python and C# YouTube tutorials. My main attention
-                            was on creating games. Back then, my projects were small and my code was often very
-                            inconsistent, but I loved figuring things out in my own way.
-                        </p>
+            <div class="joyrney-content-wrapper">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-content">
+                            <h3>the beginning</h3>
+                            <p>I started my coding journey with simple Python and C# YouTube tutorials. My main
+                                attention
+                                was on creating games. Back then, my projects were small and my code was often very
+                                inconsistent, but I loved figuring things out in my own way.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content">
+                            <h3>Started finding interest in Web Development</h3>
+                            <p>I started getting the hang of coding, but my interest in game-making decreased, so I
+                                shifted
+                                to learning web development. Around this time, my code started getting a bit cleaner,
+                                and I
+                                learned a lot of HTML and basic CSS. I didn’t code as much during this period, but it
+                                laid a
+                                solid foundation for me.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h3>Started studies at Sakky</h3>
+                            <p>During this time, I already had a strong foundation in coding, so while we studied C# and
+                                HTML at school, I had already shifted my interests to JavaScript and PHP</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <h3>present day</h3>
+                            <p>In my second year at Sakky, I’ve learned a lot of SQL and how to integrate front-end with
+                                AJAX. Right now, I’m coding more than I ever have before. I try to code at least two
+                                hours
+                                every day on top of school work.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2023</div>
-                    <div class="timeline-content">
-                        <h3>Started finding interest in Web Development</h3>
-                        <p>I started getting the hang of coding, but my interest in game-making decreased, so I shifted
-                            to learning web development. Around this time, my code started getting a bit cleaner, and I
-                            learned a lot of HTML and basic CSS. I didn’t code as much during this period, but it laid a
-                            solid foundation for me.</p>
+                <div class="childhood-img-container">
+                    <div class="childhood-img">
+                        <img src="../img/skidi.jpg" alt="Kid Me">
                     </div>
+                    <p class="img-alt"> -Me as a kid</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2024</div>
-                    <div class="timeline-content">
-                        <h3>Started studies at Sakky</h3>
-                        <p>During this time, I already had a strong foundation in coding, so while we studied C# and
-                            HTML at school, I had already shifted my interests to JavaScript and PHP</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-content">
-                        <h3>present day</h3>
-                        <p>In my second year at Sakky, I’ve learned a lot of SQL and how to integrate front-end with
-                            AJAX. Right now, I’m coding more than I ever have before. I try to code at least two hours
-                            every day on top of school work.</p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -123,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="philosophy-visual">
+                <!-- <div class="philosophy-visual">  
                     <div class="code-snippet">
                         <div class="code-header">
                             <span class="code-title">my_philosophy.js</span>
@@ -135,25 +151,26 @@
                         </div>
                         <div class="code-content">
                             <pre><code><span class="comment">// My development philosophy</span>
-<span class="keyword">const</span> <span class="variable">myApproach</span> = {
-  <span class="property">simplicity</span>: <span class="string">'over complexity'</span>,
-  <span class="property">learning</span>: <span class="string">'through building'</span>,
-  <span class="property">focus</span>: <span class="string">'user needs first'</span>,
-  <span class="property">code</span>: <span class="string">'clean and readable'</span>
-};
+                                <span class="keyword">const</span> <span class="variable">myApproach</span> = {
+                                <span class="property">simplicity</span>: <span class="string">'over complexity'</span>,
+                                <span class="property">learning</span>: <span class="string">'through building'</span>,
+                                <span class="property">focus</span>: <span class="string">'user needs first'</span>,
+                                <span class="property">code</span>: <span class="string">'clean and readable'</span>
+                                };
 
-<span class="comment">// Always remember</span>
-<span class="keyword">function</span> <span class="function">developWithPurpose</span>() {
-  <span class="keyword">return</span> <span class="string">'solve real problems'</span>;
-  
-}
-<span class="comment">// Mistakes happen.</span>
-<span class="comment">// But this is never valid:</span>
-<span class="keyword">throw <span class="error-line">giveup;</span></span>
-</code></pre>
+                                <span class="comment">// Always remember</span>
+                                <span class="keyword">function</span> <span class="function">developWithPurpose</span>() {
+                                <span class="keyword">return</span> <span class="string">'solve real problems'</span>;
+                                
+                                }
+                                <span class="comment">// Mistakes happen.</span>
+                                <span class="comment">// But this is never valid:</span>
+                                <span class="keyword">throw <span class="error-line">giveup;</span></span>
+                                </code></pre>
                         </div>
                     </div>
                 </div>
+                -->
             </div>
         </div>
     </section>
@@ -164,45 +181,45 @@
                 <h2>beyond code</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="interests-grid">
+            <div class="interests-container">
                 <div class="interest-card">
-                    <div class="interest-icon">
-                        <i class="fas fa-dumbbell"></i>
+                    <div class="interest-text">
+                        <div class="interest-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>fitness & health</h3>
+                        <p>Regular gym sessions help me stay focused and energized. I also do indoor climbing.</p>
+                        <p class="img-alt"> -In the photo me and my friends. The one on the right is Justus. Also, go
+                            check out his <a href="https://github.com/Justus45">GitHub</a>!</p>
                     </div>
-                    <h3>fitness & health</h3>
-                    <p>Regular gym sessions help me stay focused and energized. I also do indoor climbing.</p>
                 </div>
                 <div class="interest-card">
-                    <div class="interest-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>social connections</h3>
-                    <p>Spending time with friends and family keeps me grounded. Meaningful conversations and shared
-                        experiences are some of life’s greatest joys for me.</p>
+                    <img class="interest-img" src="../img/gym2.jpg" alt="Me and The boys On the gym">
+                </div>
+                <div class="interest-card left">
+                    <img class="interest-img" src="../img/Family.jpg" alt="Me and my family">
 
                 </div>
                 <div class="interest-card">
-                    <div class="interest-icon">
-                        <i class="fas fa-lightbulb"></i>
+                    <div class="interest-text">
+                        <div class="interest-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>social connections</h3>
+                        <p>Spending time with friends and family keeps me motivated. Meaningful conversations and shared
+                            experiences are some of life’s greatest joys for me.</p>
+                        <p class="img-alt"> -In the photo me and my family</p>
+
+
+
+
                     </div>
-                    <h3>continuous learning</h3>
-                    <p>The tech world moves fast, and I enjoy keeping up. Whether it's a new framework, design pattern,
-                        or just a better way to organize code and files.</p>
                 </div>
-                <div class="interest-card">
-                    <div class="interest-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>practical projects</h3>
-                    <p>I love building things that actually get used. Whether it's a simple booking system or a tool
-                        that saves someone time.</p>
-                </div>
-            </div>
-        </div>
+            </div </div>
     </section>
 
     <section class="future-section">
-        <div class="container">
+        <div class="container future-container">
             <div class="future-content">
                 <div class="section-header">
                     <h2>looking ahead</h2>
@@ -221,10 +238,10 @@
                 <div class="future-goals">
                     <h3>current focus areas</h3>
                     <ul class="goals-list">
-                        <li>Strengthening my JavaScript and PHP skills</li>
-                        <li>Learning modern libraries and frameworks like Koa and React</li>
-                        <li>Building more complex database-driven applications</li>
-                        <li>Improving my problem-solving skills with coding and leetcode</li>
+                        <li>Strengthening my React and Laravel skills</li>
+                        <li>Learn more about serverside rendering (Next.js)</li>
+                        <li>Building more complex production ready projects</li>
+                        <li>Improving data-structure skills with leetcode and other practice platforms</li>
                     </ul>
                 </div>
             </div>
@@ -252,11 +269,12 @@
                 <p>Second-year student at Sakky in Kuopio, studying software development. Developing practical skills in
                     programming and software design.</p>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/risto_toivanenn/" target="_blank" rel="noopener noreferrer" class="social-link"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://github.com/RistoT1" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.linkedin.com/in/risto-toivanen/" target="_blank" rel="noopener noreferrer" class="social-link"><i
-                            class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/risto_toivanenn/" target="_blank" rel="noopener noreferrer"
+                        class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/RistoT1" target="_blank" rel="noopener noreferrer"
+                        class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/risto-toivanen/" target="_blank" rel="noopener noreferrer"
+                        class="social-link"><i class="fab fa-github"></i></a>
                 </div>
             </div>
             <div class="footer-section">
@@ -276,7 +294,8 @@
                     <li><a href="tel:+358 449787395">phone</a></li>
                     <li><a href="https://drive.google.com/file/d/1XuYLmmuJxTBfRFIynlO6PkMmMc1jsiw5/view?usp=sharing"
                             download>resume</a></li>
-                    <li><a href="https://www.linkedin.com/in/risto-toivanen/" target="_blank" rel="noopener noreferrer">linkedin</a></li>
+                    <li><a href="https://www.linkedin.com/in/risto-toivanen/" target="_blank"
+                            rel="noopener noreferrer">linkedin</a></li>
                 </ul>
             </div>
         </div>
@@ -287,9 +306,10 @@
     <script type="module">
         import { Theme } from '../js/theme.js';
         import { MainUI } from '../js/main.js';
-        
+
         new Theme();
         new MainUI();
     </script>
 </body>
+
 </html>

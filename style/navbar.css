@@ -48,6 +48,10 @@
     letter-spacing: 0.5px;
 }
 
+.another-page {
+    color: pink;
+}
+
 .nav-link:hover {
     color: var(--color-text-main);
 }
@@ -104,7 +108,8 @@
 
 
 #album {
-    position: relative; /* make vinyl relative to album */
+    position: relative;
+    /* make vinyl relative to album */
     width: 40px;
     height: 40px;
 }
@@ -150,7 +155,8 @@
 
 .song-popup {
     position: fixed;
-    top: 80px; /* just below navbar (which is 70px tall) */
+    top: 80px;
+    /* just below navbar (which is 70px tall) */
     right: 20px;
     max-width: 200px;
     background: var(--color-nav-bg);
@@ -174,8 +180,9 @@
     pointer-events: auto;
     transform: translateY(0);
 }
+
 .song-popup h5 {
-    margin: 4px 0 6px 0; 
+    margin: 4px 0 6px 0;
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--color-text-main);

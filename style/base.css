@@ -35,3 +35,6 @@ input:focus, textarea:focus, button:focus, a:focus, .mobile-toggle:focus, .mobil
   outline: none !important;
 }
 
+p{
+  font-size: 1.1rem;
+}

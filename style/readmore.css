@@ -1,9 +1,18 @@
 .readmore-hero {
     padding: 8rem 2rem 4rem;
-    min-height: 50vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
+
+    background-image: url("../img/kirkko2.jpg");
+    background-position: center 25%;
+    /* adjust vertical position */
+    background-size: 100% auto;
+    /* full width, natural height */
+    background-repeat: no-repeat;
 }
+
+
 
 .breadcrumb {
     margin-bottom: 2rem;
@@ -35,10 +44,15 @@
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
+.hero-description-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .hero-description {
     font-size: 1.1rem;
-    color: var(--color-link-default);
+    text-align: center;
+    color: (--color-text-main);
     line-height: 1.6;
     max-width: 600px;
 }
@@ -68,8 +82,48 @@
     border-top: 1px solid var(--color-border);
 }
 
+.joyrney-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    /* keeps items aligned at top */
+    gap: 50px;
+}
+
 .timeline {
+    flex: 2;
+    /* takes twice the space of the image container */
     position: relative;
+}
+
+.childhood-img-container {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.childhood-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+.childhood-img img {
+    width: 70%;
+    max-width: 70%;
+    border-radius: 20px;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 .timeline::before {
@@ -134,8 +188,6 @@
 }
 
 .philosophy-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
 }
@@ -217,7 +269,8 @@
     color: var(--color-accent);
     font-weight: 500;
 }
-.error-line{
+
+.error-line {
     text-decoration: underline wavy red;
 }
 
@@ -243,24 +296,55 @@
     border-top: 1px solid var(--color-border);
 }
 
-.interests-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.interests-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* Sallii rivittäisen järjestyksen */
     gap: 2rem;
+    row-gap: 15rem;
+    /* Välit korttien välillä */
+    justify-content: center;
+    /* Keskittää rivit vaakasuunnassa */
 }
 
 .interest-card {
-    background: var(--color-accent-light);
-    border: 1px solid var(--color-border-accent-light);
-    padding: 2rem;
+    flex: 0 1 calc(50% - 2rem);
+    padding: 1rem;
     transition: all 0.3s ease;
+    box-sizing: border-box;
+    /* Sisältää paddingin leveydessä */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.interest-card:hover {
-    background: var(--color-accent-hover);
-    border-color: var(--color-border-accent);
-    transform: translateY(-2px);
+.interest-card:has(.interest-img).left,
+.interest-card img {
+    padding: 0;
+    /* poistaa kortin paddingin */
+    display: flex;
+    justify-content: start;
 }
+
+.interest-img {
+    border-radius: 20px;
+    width: 100%;
+    /* täyttää enintään vanhemman kontti-elementin */
+    max-width: 400px;
+    /* suurin sallittu leveys */
+    display: block;
+
+}
+
+.interest-img img {
+    width: 100%;
+    /* täyttää kontti-elementin leveyden */
+    height: auto;
+    /* säilyttää alkuperäisen mittasuhteen */
+    display: block;
+}
+
 
 .interest-icon {
     font-size: 2rem;
@@ -269,7 +353,7 @@
 }
 
 .interest-card h3 {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     font-weight: 400;
     color: var(--color-text-main);
     margin-bottom: 1rem;
@@ -279,13 +363,28 @@
 
 .interest-card p {
     color: var(--color-link-default);
+    font-size: 1.1rem;
     line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
+.img-alt {
+    font-size: 0.9rem !important;
+    color: var(--color-text-secondary) !important;
+}
+
+.interest-card .img-alt a {
+    text-decoration: none;
+}
 
 .future-section {
     padding: 6rem 2rem;
     border-top: 1px solid var(--color-border);
+}
+
+.future-container {
+    display: flex;
+    justify-content: center;
 }
 
 .future-content {
@@ -339,7 +438,7 @@
 }
 
 .connect-section {
-    padding: 6rem 2rem;
+    padding: 6rem 2rem 12rem 2rem;
     border-top: 1px solid var(--color-border);
     text-align: center;
 }
@@ -487,6 +586,30 @@
         grid-template-columns: 1fr;
     }
 
+
+    .joyrney-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* center content in column layout */
+    }
+
+    .timeline,
+    .childhood-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+
+    .childhood-img img {
+        width: 80%;
+        /* adjust if needed */
+    }
+
+
     .timeline::before {
         left: 40px;
     }
@@ -519,6 +642,11 @@
 
     .section-header h2 {
         font-size: 1.5rem;
+    }
+
+    .interests-container {
+        flex-direction: column-reverse;
+        row-gap: 6rem;
     }
 
     .interest-card,
