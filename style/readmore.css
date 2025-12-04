@@ -38,7 +38,7 @@
     font-size: clamp(2rem, 8vw, 4rem);
     font-weight: 300;
     margin-bottom: 1rem;
-    color: var(--color-text-main);
+    color: white;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -50,7 +50,7 @@
 .hero-description {
     font-size: 1.1rem;
     text-align: center;
-    color: (--color-text-main);
+    color: white;
     line-height: 1.6;
     max-width: 600px;
 }
