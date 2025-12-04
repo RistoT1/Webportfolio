@@ -1,9 +1,7 @@
 .readmore-hero {
     padding: 8rem 2rem 4rem;
-    min-height: 70vh;
     display: flex;
     align-items: center;
-
     background-image: url("../img/kirkko2.jpg");
     background-position: center 25%;
     /* adjust vertical position */
@@ -563,6 +561,9 @@
 }
 
 @media (max-width: 768px) {
+    .breadcrumb{
+        display: none;
+    }
     .readmore-hero {
         padding: 6rem 1rem 3rem;
         text-align: center;
