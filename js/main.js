@@ -38,16 +38,17 @@ export class MainUI {
 
     setupSkill() {
         const SkillList = [
-            { name: "JavaScript", desc: "Web programming", img: "img/JavaScriptLogo.png" },
-            { name: "React", desc: "UI library. Currently learning", img: "img/ReactLogo.png" },
-            { name: "HTML", desc: "Web structure", img: "img/HtmlLogo.png" },
-            { name: "CSS", desc: "Web styling", img: "img/CssLogo.svg" },
+            { name: "JavaScript / TypeScript", desc: "Web programming", img: "img/ts.jpg" },
+            { name: "React / REACT NATIVE", desc: "UI library.", img: "img/ReactLogo.png" },
+            { name: "CSS / TAILWIND", desc: "Web styling", img: "img/CssLogo.svg" },
             { name: "C#", desc: "App & game dev", img: "img/CsharpLogo.svg" },
-            { name: "SQL", desc: "Database queries", img: "img/MySQLLogo.jpg" },
-            { name: "PHP", desc: "Server scripting", img: "img/PhpLogo.png" },
-            { name: "Docker", desc: "Container Platform", img: "img/Docker.png"},
-            { name: "Express.js", desc: "Web framework for Node.js", img: "img/ExpressJS.png" }
-
+            { name: "SQL / NoSQL", desc: "Database queries", img: "img/mongodb.png" },
+            { name: "PHP / Laravel", desc: "Server scripting", img: "img/PhpLogo.png" },
+            { name: "Docker", desc: "Container Platform", img: "img/Docker.png" },
+            { name: "Express.js", desc: "Web framework for Node.js", img: "img/ExpressJS.png" },
+            { name: "Json", desc: "Great at processing large JSON data", img: "img/Json.png" },
+            { name: "Github-actions", desc: "Automated CI/CD workflows", img: "img/github-logo.png" },
+            { name: "Wordpress", desc: "Content management system", img: "img/Wordpress.png" }
         ];
 
 

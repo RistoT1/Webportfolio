@@ -163,7 +163,6 @@
     width: 40px;
     height: 40px;
     background: rgba(255, 192, 203, 0.25);
-    backdrop-filter: blur(6px);
     border-radius: 80px;
     /* Smooth rounded corners */
     display: flex;
