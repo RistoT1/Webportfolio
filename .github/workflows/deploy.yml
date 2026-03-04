@@ -23,11 +23,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # Prepare lowercase Docker image name
+      # Prepare Docker image tag (hardcoded lowercase)
       - name: Prepare Docker image tag
         run: |
-          REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
-          echo "DOCKER_IMAGE=ghcr.io/${REPO_LOWER}" >> $GITHUB_ENV
+          echo "DOCKER_IMAGE=ghcr.io/ristot1/webportfolio" >> $GITHUB_ENV
 
       # Build and push Docker image
       - uses: docker/build-push-action@v5
