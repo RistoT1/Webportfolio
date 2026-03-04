@@ -46,9 +46,9 @@ export class MainUI {
             { name: "PHP / Laravel", desc: "Server scripting", img: "img/PhpLogo.png" },
             { name: "Docker", desc: "Container Platform", img: "img/Docker.png" },
             { name: "Express.js", desc: "Web framework for Node.js", img: "img/ExpressJS.png" },
-            { name: "Json", desc: "Great at processing large JSON data", img: "img/Json.png" },
+            { name: "JSON", desc: "Great at processing large JSON data", img: "img/json.png" },
             { name: "Github-actions", desc: "Automated CI/CD workflows", img: "img/github-logo.png" },
-            { name: "Wordpress", desc: "Content management system", img: "img/Wordpress.png" }
+            { name: "Wordpress", desc: "Content management system", img: "img/wordPress.png" }
         ];
 
 
