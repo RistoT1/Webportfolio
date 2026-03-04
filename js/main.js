@@ -1,5 +1,4 @@
 export class MainUI {
-    // Accept a callback function that runs when skills are ready
     constructor(onReady) {
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.init(onReady));
@@ -11,9 +10,46 @@ export class MainUI {
     init(onReady) {
         this.setupMobileMenu();
         this.setupSkill();
+        this.setupSmoothScroll();
+        this.handleInitialScroll();
 
-        // Call the callback after skills are added
         if (onReady) onReady();
+    }
+
+    handleInitialScroll() {
+        const path = window.location.pathname.replace('/', '');
+        const sections = ['home', 'about', 'projects', 'contact'];
+
+        if (!sections.includes(path)) return;
+
+        const target = document.querySelector('#' + path);
+        if (!target) return;
+
+        // Small delay to let the page fully render first
+        setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+    }
+
+    setupSmoothScroll() {
+        document.querySelectorAll('a[href^="/"]').forEach(link => {
+            const href = link.getAttribute('href');
+
+            // Only handle single-segment paths like /about, /contact, /home, /projects
+            const sections = ['home', 'about', 'projects', 'contact'];
+            const segment = href.replace('/', '');
+
+            if (!sections.includes(segment)) return;
+
+            link.addEventListener('click', (e) => {
+                const target = document.querySelector('#' + segment);
+                if (!target) return;
+
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+                history.pushState(null, '', href);
+            });
+        });
     }
 
     setupMobileMenu() {
@@ -27,7 +63,6 @@ export class MainUI {
             navMenu.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking nav links
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('active');
@@ -51,9 +86,8 @@ export class MainUI {
             { name: "Wordpress", desc: "Content management system", img: "img/wordPress.png" }
         ];
 
-
         const SkillContainer = document.getElementById('skills');
-        if (!SkillContainer) return; // safety check
+        if (!SkillContainer) return;
 
         const fragment = document.createDocumentFragment();
         SkillList.forEach(skill => {
@@ -66,7 +100,6 @@ export class MainUI {
         const skillDiv = document.createElement('div');
         skillDiv.classList.add('skill');
 
-        // Add image if it exists
         if (skill.img) {
             const imgContainer = document.createElement('div');
             imgContainer.classList.add('skill-img-container');
@@ -79,7 +112,6 @@ export class MainUI {
             skillDiv.appendChild(imgContainer);
         }
 
-        // Title container
         const titleDiv = document.createElement('div');
         titleDiv.classList.add('skill-title');
 
@@ -94,7 +126,6 @@ export class MainUI {
         }
 
         skillDiv.appendChild(titleDiv);
-
-        return skillDiv; // Return the constructed element
+        return skillDiv;
     }
 }
