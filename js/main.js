@@ -11,43 +11,37 @@ export class MainUI {
         this.setupMobileMenu();
         this.setupSkill();
         this.setupSmoothScroll();
-        this.handleInitialScroll();
-
+        this.handleScrollParam();
         if (onReady) onReady();
     }
 
-    handleInitialScroll() {
-        const path = window.location.pathname.replace('/', '');
-        const sections = ['home', 'about', 'projects', 'contact'];
+    handleScrollParam() {
+        const params = new URLSearchParams(window.location.search);
+        const section = params.get('s');
+        if (!section) return;
 
-        if (!sections.includes(path)) return;
+        // Wipe the ?s= param from URL immediately
+        history.replaceState(null, '', '/');
 
-        const target = document.querySelector('#' + path);
+        const target = document.querySelector('#' + section);
         if (!target) return;
 
-        // Small delay to let the page fully render first
         setTimeout(() => {
             target.scrollIntoView({ behavior: 'smooth' });
         }, 100);
     }
 
     setupSmoothScroll() {
-        document.querySelectorAll('a[href^="/"]').forEach(link => {
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
             const href = link.getAttribute('href');
-
-            // Only handle single-segment paths like /about, /contact, /home, /projects
-            const sections = ['home', 'about', 'projects', 'contact'];
-            const segment = href.replace('/', '');
-
-            if (!sections.includes(segment)) return;
+            if (href === '#') return;
 
             link.addEventListener('click', (e) => {
-                const target = document.querySelector('#' + segment);
+                const target = document.querySelector(href);
                 if (!target) return;
 
                 e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth' });
-                history.pushState(null, '', href);
             });
         });
     }
