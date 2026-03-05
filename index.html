@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Risto Toivanen",
+    "url": "https://ristotoivanen.com",
+    "jobTitle": "Software Developer",
+    "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kuopio",
+    "addressCountry": "Finland"
+    },
+    "sameAs": [
+    "https://github.com/RistoT1",
+    "https://www.linkedin.com/in/risto-toivanen/",
+    "https://www.instagram.com/risto_toivanenn/"
+    ]
+    }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risto Toivanen - Web Developer</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.ico">
+    <meta name="description"
+        content="Risto Toivanen - Software developer from Kuopio, Finland. Portfolio, projects and experience in JavaScript, React and full-stack development.">
+    <meta name="author" content="Risto Toivanen">
+    <meta name="keywords"
+        content="Risto Toivanen, software developer, web developer, Kuopio, portfolio, JavaScript, React developer">
+    <meta property="og:title" content="Risto Toivanen - Software Developer">
+    <meta property="og:description" content="Software developer from Kuopio specializing in modern web applications.">
+    <meta property="og:image" content="https://ristotoivanen.com/img/myFace.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://ristotoivanen.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Risto Toivanen - Software Developer">
+    <meta name="twitter:description" content="Software developer from Kuopio specializing in modern web applications.">
+    <meta name="twitter:image" content="https://ristotoivanen.com/img/myFace.jpg">
+    <meta name="robots" content="index, follow">
+    <title>Risto Toivanen | Software Developer Portfolio</title>
+    <link rel="canonical" href="https://ristotoivanen.com/">
+    <link rel="icon" sizes="32x32" href="/img/favicon.ico">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preload" as="image" href="img/frontpage_img.webp">
     <link rel="stylesheet" href="style/main.css">
 </head>
 
@@ -35,7 +74,7 @@
             <!-- Song popup OUTSIDE ul -->
             <div class="song-popup" id="song-popup">
                 <h5>Currently Playing <i class="fas fa-music" style="color: rgb(213, 0, 246);"></i></h5>
-                <img id="popupCover" src="" alt="Album Cover" />
+                <img id="popupCover" src="" alt="Album Cover" loading="lazy"/>
                 <div id="popupInfo">
                     <span id="popupTitle"></span> - <span id="popupArtist"></span>
                 </div>
@@ -50,12 +89,12 @@
     </nav>
 
     <section class="hero" id="home">
-        <link rel="preload" as="image" href="img/frontpage_img.webp">
-        <img src="img/frontpage_img.webp" alt="Hero background" class="hero-bg" />
+        <img src="img/frontpage_img.webp" alt="Hero background" class="hero-bg" loading="lazy" />
         <div class="hero-content">
             <h1>
                 <span>Risto</span>
                 <span>Toivanen</span>
+                <span class="sr-only">Software Developer</span>
             </h1>
             <p class="hero-subtitle">SOFTWARE DEVELOPER</p>
             <div class="hero-details">
@@ -68,7 +107,7 @@
     <section class="about" id="about">
         <div class="container">
             <div class="branch-svg-container">
-                <img src="img/branch.svg" alt="">
+                <img src="img/branch.svg" alt="" loading="lazy">
             </div>
             <div class="about-content">
                 <div class="about-text">
@@ -78,8 +117,9 @@
                         applications.
                     </p>
                     <p>
-                        I work mainly with JavaScript and React, and I have hands-on experience with multible different
-                        technologies that I have learned and worked with. I also learn very fast and I'm always trying to expand my skillset.
+                        I work mainly with JavaScript and React, and I have hands-on experience with multiple different
+                        technologies that I have learned and worked with. I also learn very fast and I'm always trying
+                        to expand my skillset.
                     </p>
                     <p>When I'm not coding, I enjoy spending time with friends, going to the gym, and focusing on the
                         things that really matter.
@@ -94,7 +134,7 @@
                 <div class="about-stats">
                     <div class="profile-image">
                         <div class="profile-circle">
-                            <img src="img/myFace.jpg" alt="Risto Toivanen">
+                            <img src="img/myFace.jpg" alt="Risto Toivanen" loading="lazy">
                         </div>
                     </div>
                     <div class="stats-container">
@@ -117,21 +157,22 @@
             <h2>Work experience</h2>
             <div class="project-item" style="gap: 1rem;">
                 <img src="./img/TCD Consulting and Research Oy.png" alt="work-img" class="project-img"
-                    onclick="window.open('https://tcdcon.com/', '_blank')">
+                    onclick="window.open('https://tcdcon.com/', '_blank')" loading="lazy">
                 <div class="project-info" style="margin-left: 2rem;">
                     <div class="project-number">8.1 - 13.3.2026</div>
                     <h3>TCD Consulting and Research Oy</h3>
                     <h4>Development Intern Project: Educational Qualification Comparison Tool</h4>
                     <p class="project-description">Developed a web application that integrates with the Finnish National
                         Agency for Education's (Opetushallitus) "ePerusteet" API. The primary goal of the application is
-                        to help users search for vocational qualifications and compare their structures to find overlapping
+                        to help users search for vocational qualifications and compare their structures to find
+                        overlapping
                         modules. </p>
                     <p class="project-tech">Express • JavaScript • React • JSON</p>
                 </div>
             </div>
             <div class="project-item" style="gap: 1rem;">
                 <img src="./img/taitaja-mastare-2026.png" alt="work-img" class="project-img"
-                    onclick="window.open('https://taitaja.fi/en/', '_blank')">
+                    onclick="window.open('https://taitaja.fi/en/', '_blank')" loading="lazy">
                 <div class="project-info" style="margin-left: 2rem;">
                     <div class="project-number">2026</div>
                     <h3>Taitaja 2026 finalist</h3>
@@ -154,7 +195,7 @@
             <div class="projects-list">
                 <div class="project-item">
                     <div class="project-number">01</div>
-                    <img src="img/Store-page.png" alt="project img" class="project-img">
+                    <img src="img/Store-page.png" alt="project img" class="project-img" loading="lazy">
                     <div class="project-info">
                         <h3>Ecommerce-page-MERN</h3>
                         <p class="project-description">Ecommerce-page with user authentication and admintools. Currently
@@ -171,7 +212,7 @@
                 </div>
                 <div class="project-item">
                     <div class="project-number">02</div>
-                    <img src="./img/75hard2.jpg" alt="project img" class="project-img">
+                    <img src="./img/75hard2.jpg" alt="project img" class="project-img" loading="lazy">
                     <div class="project-info">
                         <h3>Routine app</h3>
                         <p class="project-description">Routine app that I built during 75Hard-challenge</p>
@@ -188,7 +229,7 @@
                 <div class="project-item">
                     <div class="project-number">03</div>
                     <img src="https://raw.githubusercontent.com/RistoT1/ModernPizzeria-ES6-PHP/main/src/ReadMeImgs/index.png"
-                        alt="project img" class="project-img">
+                        alt="project img" class="project-img" loading="lazy">
                     <div class="project-info">
                         <h3>ModernPizzeria-ES6-PHP</h3>
                         <p class="project-description">A responsive web application built with ES6 JavaScript and PHP,
@@ -237,9 +278,9 @@
                 <div class="project-item">
                     <div class="project-number">04</div>
                     <img src="https://github.com/RistoT1/Taitaja24-semifinaali-GroupProject/blob/main/lis%C3%A4materiaali/readmeImgs/index1.png?raw=true"
-                        alt="project img" class="project-img">
+                        alt="project img" class="project-img" loading="lazy">
                     <div class="project-info">
-                        <h3>Group-Project-Food-Ecommerse-Page</h3>
+                        <h3>Group-Project-Food-Ecommerce-Page</h3>
                         <p class="project-description">a full-stack e-commerce web application based on the Taitaja 2024
                             competition semifinals project. The project is built with Laravel and demonstrates modern
                             web development practices. This project was meant to teach how to work as a team and be
@@ -258,7 +299,7 @@
                 <div class="project-item">
                     <div class="project-number">05</div>
                     <img src="https://raw.githubusercontent.com/RistoT1/NowPlayingAPI/main/readMeImg/ReadmeImg1.png"
-                        alt="project img" class="project-img">
+                        alt="project img" class="project-img" loading="lazy">
                     <div class="project-info">
                         <h3>Webservice for currently playing song, Youtube Music</h3>
                         <p class="project-description">The vinyl you see on the nav</p>
@@ -276,10 +317,10 @@
                 <div class="project-item">
                     <div class="project-number">06</div>
                     <img src="https://raw.githubusercontent.com/RistoT1/React-Projects/main/3d%20shoe/3D-Shoe/screenshots/shoeBlack.png"
-                        alt="Black Shoe" class="project-img">
+                        alt="Black Shoe" class="project-img" loading="lazy">
                     <div class="project-info">
                         <h3>3D-shoe designing app</h3>
-                        <p class="project-description">3D shoe coloring app. Experiement project for learning 3D object
+                        <p class="project-description">3D shoe coloring app. Experiment project for learning 3D object
                             rendering in react.</p>
                         <p class="project-tech">React • Three-Fiber • Blender</p>
                     </div>
@@ -299,7 +340,7 @@
             </div>
         </div>
     </section>
-    
+
 
     <section class="contact" id="contact">
         <div class="container">
