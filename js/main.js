@@ -67,17 +67,22 @@ export class MainUI {
 
     setupSkill() {
         const SkillList = [
+            // Frontend
             { name: "JavaScript / TypeScript", desc: "Web programming", img: "img/ts.jpg" },
-            { name: "React / REACT NATIVE", desc: "UI library.", img: "img/ReactLogo.png" },
+            { name: "React / REACT NATIVE", desc: "Framework", img: "img/ReactLogo.png" },
+            { name: "Vue", desc: "Framework", img: "img/Vue-logo.png" },
             { name: "CSS / TAILWIND", desc: "Web styling", img: "img/CssLogo.svg" },
-            { name: "C#", desc: "App & game dev", img: "img/CsharpLogo.svg" },
-            { name: "SQL / NoSQL", desc: "Database queries", img: "img/mongodb.png" },
-            { name: "PHP / Laravel", desc: "Server scripting", img: "img/PhpLogo.png" },
-            { name: "Docker", desc: "Container Platform", img: "img/Docker.png" },
+            // Backend
             { name: "Express.js", desc: "Web framework for Node.js", img: "img/ExpressJS.png" },
+            { name: "PHP / Laravel", desc: "Server scripting", img: "img/Laravel.png" },
+            { name: "C#", desc: "App & game dev", img: "img/CsharpLogo.svg" },
+            // Data
+            { name: "SQL / NoSQL", desc: "Database queries", img: "img/mongodb.png" },
             { name: "JSON", desc: "Great at processing large JSON data", img: "img/json.png" },
+            // DevOps & CMS
+            { name: "Docker", desc: "Container Platform", img: "img/Docker.png" },
             { name: "Github-actions", desc: "Automated CI/CD workflows", img: "img/github-logo.png" },
-            { name: "Wordpress", desc: "Content management system", img: "img/wordPress.png" }
+            { name: "Wordpress", desc: "Content management system", img: "img/wordPress.png" },
         ];
 
         const SkillContainer = document.getElementById('skills');
