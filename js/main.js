@@ -66,31 +66,92 @@ export class MainUI {
     }
 
     setupSkill() {
-        const SkillList = [
-            // Frontend
-            { name: "JavaScript / TypeScript", desc: "Web programming", img: "img/ts.jpg" },
-            { name: "React / REACT NATIVE", desc: "Framework", img: "img/ReactLogo.png" },
-            { name: "Vue", desc: "Framework", img: "img/Vue-logo.png" },
-            { name: "CSS / TAILWIND", desc: "Web styling", img: "img/CssLogo.svg" },
-            // Backend
-            { name: "Express.js", desc: "Web framework for Node.js", img: "img/ExpressJS.png" },
-            { name: "PHP / Laravel", desc: "Server scripting", img: "img/Laravel.png" },
-            { name: "C#", desc: "App & game dev", img: "img/CsharpLogo.svg" },
-            // Data
-            { name: "SQL / NoSQL", desc: "Database queries", img: "img/mongodb.png" },
-            { name: "JSON", desc: "Great at processing large JSON data", img: "img/json.png" },
-            // DevOps & CMS
-            { name: "Docker", desc: "Container Platform", img: "img/Docker.png" },
-            { name: "Github-actions", desc: "Automated CI/CD workflows", img: "img/github-logo.png" },
-            { name: "Wordpress", desc: "Content management system", img: "img/wordPress.png" },
+        const SkillGroups = [
+            {
+                category: "Frontend",
+                skills: [
+                    { name: "JavaScript", desc: "Web programming", img: "img/JavaScriptLogo.png" },
+                    { name: "TypeScript", desc: "Typed JavaScript", img: "img/ts.jpg" },
+                    { name: "React / React Native", desc: "Framework", img: "img/ReactLogo.png" },
+                    { name: "Vue", desc: "Framework", img: "img/Vue-logo.png" },
+                    { name: "Tailwind", desc: "CSS framework", img: "img/TailwindLogo.webp" },
+                ],
+            },
+            {
+                category: "Backend",
+                skills: [
+                    { name: ".NET", desc: "C# framework", img: "img/DotnetLogo.png" },
+                    { name: "Express.js", desc: "Web framework for Node.js", img: "img/ExpressJS.png" },
+                    { name: "PHP / Laravel", desc: "Server side rendering", img: "img/Laravel.png" },
+                ],
+            },
+            {
+                category: "Database",
+                skills: [
+                    { name: "SQL", desc: "Relational databases", img: "img/postgresql-icon.webp" },
+                    { name: "MS SQL", desc: "Microsoft SQL Server", img: "img/MSSQLLogo.webp" },
+                    { name: "NoSQL", desc: "Document databases", img: "img/mongodb.png" },
+                ],
+            },
+            {
+                category: "IoT",
+                skills: [
+                    { name: "Basics of electronics", desc: "Fundamental electronics and circuit knowledge", img: "" },
+                    { name: "C++", desc: "Programming language for microcontrollers", img: "img/cpp.png" },
+                    { name: "Arduino & ESP32", desc: "Microcontrollers", img: "img/espressif-systems-logo.png" },
+                    { name: "PlatformIO", desc: "IoT development environment", img: "img/platformio.png" },
+                ],
+            },
+            {
+                category: "DevOps & CI",
+                skills: [
+                    { name: "Docker", desc: "Container Platform", img: "img/Docker.png" },
+                    { name: "Github-actions", desc: "Automated CI/CD workflows", img: "img/github-logo.png" },
+                    { name: "BitBucket", desc: "Automated CI/CD workflows", img: "img/atlassian-bitbucket-icon.webp" },
+                    { name: "Jira", desc: "Project management tool", img: "img/atlassian-jira-icon.webp" },
+                    { name: "Bruno", desc: "API testing tool", img: "img/bruno.png" }
+                ],
+            },
+            {
+                category: "CMS & design",
+                skills: [
+                    { name: "Wordpress", desc: "Content management system", img: "img/wordPress.png" },
+                    { name: "Figma", desc: "UI/UX design tool", img: "img/figma-icon.webp" },
+                    { name: "Canva", desc: "Graphic design tool", img: "img/canva-logo.png" },
+
+                ],
+            },
+             {
+                category: "Ai & LLMs",
+                skills: [
+                    { name: "Codex", desc: "AI code generation tool", img: "img/codex-logo.svg" },
+                    { name: "Claude Code", desc: "AI code generation tool", img: "img/claude-ai-icon.webp" },
+                    { name: "Obsidian", desc: "Knowledge management tool", img: "img/2023_Obsidian_logo.webp" },
+                ],
+            },
         ];
 
         const SkillContainer = document.getElementById('skills');
         if (!SkillContainer) return;
 
         const fragment = document.createDocumentFragment();
-        SkillList.forEach(skill => {
-            fragment.appendChild(this.ConstructSkill(skill));
+        SkillGroups.forEach(group => {
+            const categoryDiv = document.createElement('div');
+            categoryDiv.classList.add('skill-category');
+
+            const heading = document.createElement('h4');
+            heading.classList.add('skill-category-title');
+            heading.textContent = group.category;
+            categoryDiv.appendChild(heading);
+
+            const groupGrid = document.createElement('div');
+            groupGrid.classList.add('skill-group');
+            group.skills.forEach(skill => {
+                groupGrid.appendChild(this.ConstructSkill(skill));
+            });
+            categoryDiv.appendChild(groupGrid);
+
+            fragment.appendChild(categoryDiv);
         });
         SkillContainer.appendChild(fragment);
     }

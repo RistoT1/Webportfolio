@@ -60,6 +60,7 @@
                 <li><a href="#projects" class="nav-link">Work</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li><a href="/readmore" class="nav-link another-page">Read more</a></li>
+                <li><a href="/taitaja" class="nav-link another-page">Taitaja</a></li>
                 <li><button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button></li>
                 <li id="wrap">
                     <div id="album">
@@ -98,7 +99,7 @@
             </h1>
             <p class="hero-subtitle">SOFTWARE DEVELOPER</p>
             <div class="hero-details">
-                <p>Second-year student at Sakky in Kuopio, studying software development. Developing practical skills in
+                <p>Third-year student at Sakky in Kuopio, studying software development. Developing practical skills in
                     programming and software design.</p>
             </div>
         </div>
@@ -113,17 +114,17 @@
                 <div class="about-text">
                     <h2>about</h2>
                     <p>
-                        I'm a second-year software development student at Sakky Kuopio, focused on building modern web
-                        applications.
+                        I'm a third-year software development student at Sakky Kuopio.
                     </p>
                     <p>
-                        I work mainly with JavaScript and React, and I have hands-on experience with multiple different
+                        I work mainly with JavaScript and React / Vue, and I have hands-on experience with multiple different
                         technologies that I have learned and worked with. I also learn very fast and I'm always trying
                         to expand my skillset.
                     </p>
+                    <p> Lately I've been learning .Net and Microsoft ecosystem technologies and done actual production work with it for TCD Consulting and Research Oy.</p>
                     <p>When I'm not coding, I enjoy spending time with friends, going to the gym, and focusing on the
                         things that really matter.
-                        <a href="/readmore" class="nav-link">Read more</a>
+                        <a href="/readmore" class="nav-link another-page">Read more</a>
                     </p>
 
                     <div id="skills" class="skills">
@@ -155,6 +156,20 @@
     <section class="projects" id="projects">
         <div class="container">
             <h2>Work experience</h2>
+            <div class="project-item" style="gap: 1rem;">
+                <img src="./img/TCD_Consulting_and_Research_Oy.png" alt="work-img" class="project-img"
+                    onclick="window.open('https://tcdcon.com/', '_blank')" loading="lazy">
+                <div class="project-info" style="margin-left: 2rem;">
+                    <div class="project-number">1.6 - 31.10.2026</div>
+                    <h3>TCD Consulting and Research Oy</h3>
+                    <h4>Apprenticeship</h4>
+                    <p class="project-description">Developed B2B data analytics solutions with .NET 
+                        and Microsoft ecosystem technologies like Azure and MS SQL and contributed 
+                        to various projects during the apprenticeship period.
+                    </p>
+                    <p class="project-tech">Azure • MS SQL • .NET</p>
+                </div>
+            </div>
             <div class="project-item" style="gap: 1rem;">
                 <img src="./img/TCD_Consulting_and_Research_Oy.png" alt="work-img" class="project-img"
                     onclick="window.open('https://tcdcon.com/', '_blank')" loading="lazy">
@@ -196,12 +211,42 @@
                     </div>
                 </div>
             </div>
+             <div class="project-item" style="gap: 1rem;">
+                <img src="./img/s-group.svg" alt="work-img" class="project-img" loading="lazy">
+                <div class="project-info" style="margin-left: 2rem;">
+                    <div class="project-number">8.1 - 13.3.2026</div>
+                    <h3>S-Market Nilsiä</h3>
+                    <h4>Retail worker (Non-tech background)</h4>
+                    <p class="project-description">Gained practical retail experience working multiple summers at S-Market Nilsiä, gaining customer service skills and understanding of point-of-sale systems and work ethic.</p>
+                    <p class="project-tech">Customer Service • Inventory Management • Sales Operations</p>
+                </div>
+            </div>
         </div>
         <div class="container">
             <h2>Selected work</h2>
             <div class="projects-list">
-                <div class="project-item">
+                    <div class="project-item">
                     <div class="project-number">01</div>
+                        <img src="img/ostuDev.png" alt="project img" class="project-img" loading="lazy">
+                        <div class="project-info">
+                            <h3>OstuDev - TCD Consulting and Research Oy</h3>
+                            <p class="project-description">Project I built during my internship at TCD Consulting and Research Oy. Integrates with the Finnish National
+                                Agency for Education's (Opetushallitus) "ePerusteet" API. The primary goal of the application is
+                                to help users search for vocational qualifications and compare their structures to find
+                                overlapping modules. This is the only project I'm allowed to showcase publicly from my internship and apprenticeship due to confidentiality agreements.
+                            </p>
+                            <p class="project-tech">EperusteetApi</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://dev.ostu.fi" target="_blank" rel="noopener noreferrer"
+                            class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                live site
+                            </a>    
+                        </div>
+                    </div>
+                    <div class="project-item">
+                    <div class="project-number">02</div>
                     <img src="img/varastoWlogo.png" alt="project img" class="project-img" loading="lazy">
                     <div class="project-info">
                         <h3>Varasto-app for School - Actual production usage</h3>
@@ -218,8 +263,28 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="project-item">
                     <div class="project-number">02</div>
+                    <img src="./img/IotProject.png" alt="project img" class="project-img" loading="lazy">
+                    <div class="project-info">
+                        <h3>Electricity and waterflow monitoring app - Iot Project</h3>
+                        <p class="project-description">ESP32-based energy and heat monitoring system. 
+                            Measures electricity (LDR pulses), thermal energy (DS18B20 + flow meter), 
+                            and sends data to a .NET backend with a Vue dashboard.</p>
+                        <p class="project-tech">ESP32 • .NET • Vue.js • PostgreSQL • C++</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/RistoT1/iot-electricity-and-waterflow-telemetry-project" target="_blank" rel="noopener noreferrer"
+                            class="project-link">
+                            <i class="fab fa-github"></i>
+                            source code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-number">03</div>
                     <img src="./img/75hard2.jpg" alt="project img" class="project-img" loading="lazy">
                     <div class="project-info">
                         <h3>Routine app</h3>
@@ -236,7 +301,7 @@
                 </div>
 
                 <div class="project-item">
-                    <div class="project-number">03</div>
+                    <div class="project-number">04</div>
                     <img src="https://raw.githubusercontent.com/RistoT1/NowPlayingAPI/main/readMeImg/ReadmeImg1.png"
                         alt="project img" class="project-img" loading="lazy">
                     <div class="project-info">
@@ -254,7 +319,7 @@
                 </div>
 
                 <div class="project-item">
-                    <div class="project-number">04</div>
+                    <div class="project-number">05</div>
                     <img src="https://raw.githubusercontent.com/RistoT1/React-Projects/main/3d%20shoe/3D-Shoe/screenshots/shoeBlack.png"
                         alt="Black Shoe" class="project-img" loading="lazy">
                     <div class="project-info">
@@ -270,23 +335,6 @@
                             live site
                         </a>
                         <a href="https://github.com/RistoT1/React-Projects/tree/main/3d%20shoe/3D-Shoe" target="_blank"
-                            rel="noopener noreferrer" class="project-link">
-                            <i class="fab fa-github"></i>
-                            source code
-                        </a>
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="project-number">05</div>
-                    <img src="img/Store-page.png" alt="project img" class="project-img" loading="lazy">
-                    <div class="project-info">
-                        <h3>Ecommerce-page-MERN</h3>
-                        <p class="project-description">Ecommerce-page with user authentication and admintools. Currently
-                            a work in progress.</p>
-                        <p class="project-tech">React, Tailwind CSS, Node.js, Express, MongoDB, Supabase (Auth)</p>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/RistoT1/React-Projects/tree/main/Store-Page" target="_blank"
                             rel="noopener noreferrer" class="project-link">
                             <i class="fab fa-github"></i>
                             source code
@@ -359,7 +407,7 @@
         <div class="footer-content">
             <div class="footer-section footer-brand">
                 <h3>risto toivanen</h3>
-                <p>Second-year student at Sakky in Kuopio, studying software development. Developing practical skills in
+                <p>Third-year student at Sakky in Kuopio, studying software development. Developing practical skills in
                     programming and software design.</p>
                 <div class="social-links">
                     <a href="https://www.instagram.com/risto_toivanenn/" target="_blank" rel="noopener noreferrer"
@@ -378,6 +426,7 @@
                     <li><a href="#projects">work</a></li>
                     <li><a href="#contact">contact</a></li>
                     <li><a href="/readmore">Read more</a></li>
+                    <li><a href="/taitaja">Taitaja</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -385,7 +434,7 @@
                 <ul class="footer-links">
                     <li><a href="mailto:ristotoiv.rt@gmail.com">email</a></li>
                     <li><a href="tel:+358449787395">phone</a></li>
-                    <li><a href="https://drive.google.com/file/d/1XuYLmmuJxTBfRFIynlO6PkMmMc1jsiw5/view?usp=sharing"
+                    <li><a href="https://drive.google.com/file/d/1HNokIxW33pqDkPE_8aDiDTU9VhhWn1jz/view?usp=sharing" target="_blank" rel="noopener noreferrer"
                             download>resume</a></li>
                     <li><a href="https://www.linkedin.com/in/risto-toivanen/" target="_blank"
                             rel="noopener noreferrer">linkedin</a></li>
@@ -393,7 +442,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 risto toivanen. all rights reserved.</p>
+            <p>© 2026 risto toivanen. all rights reserved.</p>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>

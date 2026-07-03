@@ -80,44 +80,39 @@
     border-top: 1px solid var(--color-border);
 }
 
-.joyrney-content-wrapper {
-    display: flex;
-    align-items: flex-start;
+.journey-content-wrapper {
+    display: flow-root;
+    /* contains the floated image so it doesn't overflow the section */
     width: 100%;
-    height: 100%;
-    flex-direction: row;
-    align-items: center;
-    /* keeps items aligned at top */
-    gap: 50px;
 }
 
 .timeline {
-    flex: 2;
-    /* takes twice the space of the image container */
     position: relative;
+    display: flow-root;
+    /* keeps the floated image contained within the timeline */
 }
 
-.childhood-img-container {
-    flex: 1;
-    min-width: 300px;
+.risto-pic-container {
+    float: right;
+    width: 300px;
+    margin: 0.5rem 0 1.5rem 2.5rem;
+    /* text wraps to the left and below the image */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.childhood-img {
+.risto-pic {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    max-width: 400px;
 }
 
-.childhood-img img {
-    width: 70%;
-    max-width: 70%;
+.risto-pic img {
+    width: 100%;
     border-radius: 20px;
     height: auto;
     display: block;
@@ -375,6 +370,417 @@
     text-decoration: none;
 }
 
+/* ============================================================
+   Taitaja — cinematic scroll experience
+   Phase 1 enter → Phase 2 waterfall → Phase 3 story → Phase 4 exit
+   ============================================================ */
+.taitaja-cinematic {
+    position: relative;
+    background: var(--color-bg-dark);
+    color: var(--color-text-main);
+}
+
+/* Phase 1 — darken the page into the cinematic tone on entry */
+.cinematic-enter {
+    height: 12vh;
+    background: linear-gradient(to bottom, transparent, var(--color-bg-dark) 80%);
+}
+
+/* Phase 2 — looping image waterfall, pinned while it fades away */
+.cinematic-waterfall {
+    position: relative;
+    height: 260vh;
+    /* the scroll distance the waterfall is on screen */
+}
+
+.waterfall-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--color-bg-dark);
+}
+
+.waterfall-columns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding: 0 16px;
+    will-change: opacity, transform;
+}
+
+.wf-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.wf-col img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    filter: brightness(0.92);
+}
+
+/* seamless vertical loop — each column repeats its images once,
+   so a -50% shift lands exactly on the duplicate */
+@keyframes wf-up {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-50%); }
+}
+
+@keyframes wf-down {
+    from { transform: translateY(-50%); }
+    to   { transform: translateY(0); }
+}
+
+/* each column runs its endless loop + a one-time fade-in on page load.
+   the intro only touches opacity, so it never fights the looping transform */
+.wf-col-a { animation: wf-up 40s linear infinite, cine-col-in 1.3s ease 0.10s both; }
+.wf-col-b { animation: wf-down 46s linear infinite, cine-col-in 1.3s ease 0.25s both; }
+.wf-col-c { animation: wf-up 52s linear infinite, cine-col-in 1.3s ease 0.40s both; }
+.wf-col-d { animation: wf-down 44s linear infinite, cine-col-in 1.3s ease 0.55s both; }
+
+/* ---- opening animation (plays once when the page loads) ---- */
+@keyframes cine-col-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes cine-title-in {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+        letter-spacing: 18px;
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 4px;
+        filter: blur(0);
+    }
+}
+
+@keyframes cine-sub-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* cinematic edge fades — images dissolve into black top & bottom */
+.waterfall-sticky::before,
+.waterfall-sticky::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 30vh;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.waterfall-sticky::before {
+    top: 0;
+    background: linear-gradient(to bottom, var(--color-bg-dark), transparent);
+}
+
+.waterfall-sticky::after {
+    bottom: 0;
+    background: linear-gradient(to top, var(--color-bg-dark), transparent);
+}
+
+.waterfall-title {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+    will-change: opacity, transform;
+}
+
+.waterfall-title h2 {
+    font-size: clamp(2rem, 7vw, 5rem);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--color-text-main);
+    text-shadow: 0 4px 40px var(--color-bg-dark), 0 2px 16px var(--color-bg-dark);
+    animation: cine-title-in 1.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.waterfall-title p {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    animation: cine-sub-in 1s ease 1.1s both;
+}
+
+/* Phase 3 — the story, in fading partitions */
+.cinematic-story {
+    position: relative;
+    background: var(--color-bg-dark);
+    padding: 0 2rem;
+}
+
+.story-chapter {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    /* fade-in on scroll */
+    opacity: 0;
+    transform: translateY(70px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.story-chapter.in-view {
+    opacity: 1;
+    transform: none;
+}
+
+.story-chapter:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.chapter-text {
+    flex: 1;
+}
+
+.chapter-num {
+    display: block;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.chapter-text h3 {
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-main);
+}
+
+.chapter-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--color-link-default);
+    max-width: 42ch;
+}
+
+.chapter-text a {
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-accent-strong);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.chapter-text a:hover {
+    color: var(--color-text-main);
+    border-color: var(--color-text-main);
+}
+
+.chapter-media {
+    flex: 1;
+}
+
+.chapter-media > img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+}
+
+/* multi-photo galleries inside a chapter */
+.chapter-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.chapter-gallery img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+}
+
+/* three-photo layout: first spans the full width on top */
+.chapter-gallery.trio img:first-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+}
+
+.media-placeholder {
+    aspect-ratio: 4 / 3;
+    border: 1px dashed var(--color-border-accent);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    background: var(--color-accent-ultra-light);
+}
+
+/* Closing summary — a cinematic finale banner after chapter 03 */
+.story-summary {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 0;
+    margin: 4rem 0;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--color-border-accent-light);
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+    /* fade-in on scroll (same as the chapters) */
+    opacity: 0;
+    transform: translateY(70px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.story-summary.in-view {
+    opacity: 1;
+    transform: none;
+}
+
+/* winning photo as the backdrop — kept bright so it stays the focus */
+.summary-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.72);
+    transform: scale(1.05);
+}
+
+/* light vignette + edge fade so text reads without hiding the photo */
+.story-summary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        radial-gradient(ellipse at center, transparent 30%, rgba(0, 0, 0, 0.45) 100%),
+        linear-gradient(to top, var(--color-bg-dark), transparent 22%, transparent 78%, var(--color-bg-dark));
+}
+
+.summary-content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.summary-label {
+    font-size: 0.85rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    text-shadow: 0 0 24px var(--color-accent-glow);
+}
+
+.story-summary h3 {
+    font-size: clamp(2rem, 6vw, 3.6rem);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    /* always over a dark photo — stay white even in bright mode */
+    color: #ffffff;
+    text-shadow: 0 4px 40px rgba(0, 0, 0, 0.8);
+    margin: 0;
+}
+
+.summary-line {
+    width: 70px;
+    height: 2px;
+    background: var(--color-accent);
+    box-shadow: 0 0 20px var(--color-accent-glow);
+}
+
+.story-summary p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    /* always over a dark photo — stay white even in bright mode */
+    color: #ffffff;
+    max-width: 55ch;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* Phase 4 — settle out of the waterfall into the dark connect section */
+.cinematic-exit {
+    height: 25vh;
+    background: var(--color-bg-dark);
+}
+
+/* dark "let's connect" so the whole page keeps the cinematic tone */
+.cinematic-connect {
+    background: var(--color-bg-dark);
+    border-top: none;
+}
+
+@media (max-width: 768px) {
+    .cinematic-waterfall {
+        height: 200vh;
+    }
+
+    .wf-col-c,
+    .wf-col-d {
+        display: none;
+    }
+
+    .story-chapter,
+    .story-chapter:nth-child(even) {
+        flex-direction: column;
+        gap: 2rem;
+        min-height: 90vh;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .chapter-text p {
+        margin: 0 auto;
+    }
+
+    .chapter-media {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .story-summary {
+        margin: 2rem 0;
+        border-radius: 18px;
+    }
+}
+
 .future-section {
     padding: 6rem 2rem;
     border-top: 1px solid var(--color-border);
@@ -588,15 +994,15 @@
     }
 
 
-    .joyrney-content-wrapper {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        /* center content in column layout */
+    .risto-pic-container {
+        float: none;
+        width: 100%;
+        max-width: 400px;
+        margin: 2rem auto;
     }
 
     .timeline,
-    .childhood-img {
+    .risto-pic {
         width: 100%;
         display: flex;
         justify-content: center;
@@ -605,7 +1011,7 @@
         text-align: left;
     }
 
-    .childhood-img img {
+    .risto-pic img {
         width: 80%;
         /* adjust if needed */
     }

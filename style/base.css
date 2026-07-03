@@ -8,6 +8,17 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    /* fills the macOS overscroll/rubber-band gap at top & bottom */
+    background: var(--color-bg-end);
+    /* hide scrollbar (Firefox) */
+    scrollbar-width: none;
+    /* hide scrollbar (IE/legacy Edge) */
+    -ms-overflow-style: none;
+}
+
+/* hide scrollbar (Chrome/Safari/Edge) */
+html::-webkit-scrollbar {
+    display: none;
 }
 
 body {

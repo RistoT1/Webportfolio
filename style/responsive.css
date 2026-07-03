@@ -143,7 +143,7 @@
         justify-content: center;
     }
 
-    .skills {
+    .skill-group {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -197,7 +197,7 @@
         font-size: 1.5rem;
     }
 
-    .skills {
+    .skill-group {
         grid-template-columns: 1fr;
     }
 

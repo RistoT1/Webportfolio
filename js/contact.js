@@ -26,7 +26,7 @@ export async function initContactForm() {
       contactForm.reset();
 
     } catch (error) {
-      console.error('EmailJS error:', error);
+      console.error('EmailJS error:', error?.status, error?.text || error);
       submitButton.textContent = 'send failed';
 
     } finally {
