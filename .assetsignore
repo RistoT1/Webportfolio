@@ -1,0 +1,8 @@
+.git
+.github
+.claude
+.DS_Store
+.assetsignore
+dockerfile
+default.conf
+README.md
